@@ -28,89 +28,100 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Light/Dark Mode Toggle
-    <div class="form-check form-switch flex justify-end">
-        <div class="pt-8">
-            <input class="form-check-input " type="checkbox" id="modeToggle">
-        </div>
-    </div> -->
 </head>
 
 <body>
 
     <!-- navbar -->
-    <header class="ml-2 mr-4 mt-2 menus">
+    <header class="ml-1 mr-4 mt-2 menus relative z-[1050]">
 
-        <div class="offcanvas offcanvas-start w-52 text-justify" id="navbar">
+        <div class="offcanvas offcanvas-start max-w-sm w-full text-justify bg-[#1c1c1c]" id="navbar">
             <div class="offcanvas-body sidebar">
-
                 <div class="offcanvas-header">
-                    <h4 class="offcanvas-title text-3xl text-[wheat] font-bold">Menus</h4>
-                    <button class="btn-close bg-white" data-bs-dismiss="offcanvas" type="button"></button>
+                    <h3 class="offcanvas-title text-3xl text-[wheat] font-bold ml-2">Menus</h3>
+                    <button class="btn-close bg-white" data-bs-dismiss="offcanvas" type="button" aria-label="Close"></button>
                 </div>
 
-                <ul class="text-xl font-semibold">
-                    <li class="px-1 tracking-wide nav-link"><a href="#home">
-                        <i class="fas fa-home mr-2"></i> HOME</a>
+                <ul class="text-xl font-semibold mt-3">
+                    <li class="px-1 tracking-wide">
+                        <a href="#home" class="ml-1 nav-link">
+                            <i class="fas fa-home me-2"></i> HOME
+                        </a>
                     </li>
 
-                    <li class="px-1 tracking-wide nav-link"><a href="#about">
-                        <i class="fas fa-user mr-2 ml-1"></i> ABOUT</a>
+                    <li class="px-1 tracking-wide">
+                        <a href="#about" class="ml-1 nav-link">
+                            <i class="fas fa-user me-2"></i> ABOUT
+                        </a>
                     </li>
 
-                    <li class="px-1 tracking-wide nav-link"><a href="#education">
-                        <i class="fas fa-graduation-cap mr-2"></i> EDUCATION</a>
+                    <li class="px-1 tracking-wide">
+                        <a href="#education" class="nav-link">
+                            <i class="fas fa-graduation-cap me-2"></i> EDUCATION
+                        </a>
                     </li>
 
-                    <li class="px-1 tracking-wide nav-link"><a href="#skills">
-                        <i class="fas fa-code mr-2"></i> SKILLS</a>
+                    <li class="px-1 tracking-wide">
+                        <a href="#skills" class="nav-link">
+                            <i class="fas fa-code me-2"></i> SKILLS
+                        </a>
+                    </li>
+                    <li class="px-1 tracking-wide">
+                        <a href="#projects" class="nav-link">
+                            <i class="fas fa-project-diagram me-2"></i> PROJECTS
+                        </a>
                     </li>
 
-                    <li class="px-1 tracking-wide nav-link"><a href="#projects">
-                        <i class="fas fa-project-diagram mr-2"></i> PROJECTS</a>
+                    <li class="px-1 tracking-wide">
+                        <a href="#soft-skills" class="nav-link">
+                            <i class="fas fa-brain me-2"></i> SOFT-SKILLS
+                        </a>
                     </li>
 
-                    <li class="px-1 tracking-wide nav-link"><a href="#soft-skills">
-                        <i class="fas fa-brain mr-2"></i> SOFT-SKILLS</a>
-                    </li>
-
-                    <li class="px-1 tracking-wide nav-link"><a href="#contact">
-                        <i class="fas fa-envelope mr-2"></i> CONTACT</a>
+                    <li class="px-1 tracking-wide">
+                        <a href="#contact" class="nav-link">
+                            <i class="fas fa-envelope me-2"></i> CONTACT
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <!-- navbar button-->
+        <!-- Toggle Buttons -->
+        <div class="container-fluid fixed toggle-wrapper" style="z-index: 1055;">
+            <button class="btn btn-secondary fixed py-1.5 px-2.5 left-4 top-6 text-lg get-button text-black border-[#9333ea] border-2"
+                data-bs-toggle="offcanvas" data-bs-target="#navbar" aria-controls="navbar" aria-label="Toggle navigation">
+                <i class="fa-solid fa-list"></i>
+            </button>
 
-        <button class="btn btn-secondary fixed py-1.5 px-2-8 left-4 top-6 text-lg get-button text-black border-[#9333ea] border-2"
-            data-bs-toggle="offcanvas" data-bs-target="#navbar" aria-label="Close" type="button">
-
-            <i class="fa-solid fa-list"></i>
-        </button>
-
-        <button class="btn btn-secondary fixed right-4 top-6 py-1.5 text-lg px-2 border-[#9333ea] border-2 get-button theme-toggle nav-link"
-            onclick="toggleTheme()">🌙
-        </button>
+            <button class="btn btn-secondary fixed right-4 top-6 py-1.5 text-lg px-2 border-[#9333ea] border-2 get-button theme-toggle nav-link"
+                onclick="toggleTheme()" aria-label="Toggle Theme">
+                🌙
+            </button>
+        </div>
     </header>
 
     <!-- Intro Section -->
-    <section class="intro flex items-center justify-center" id="home">
+    <section class="intro flex items-center justify-center relative min-h-screen" id="home">
         
         <!-- Background video -->
-        <video autoplay muted loop playsinline>
+        <video autoplay muted loop playsinline class="w-full h-full object-cover absolute top-0 left-0 z-[-1]">
             <source src="v1.mp4" type="video/mp4"/>
         </video>
 
         <div class="text-center absolute">
-           
-            <h1 class="text-7xl font-bold text-[wheat] mb-[1.5rem] transition-300 tracking-wide marquee-1 ">Myself  <span class="text-stroke"> Amit Mathur</span></h1>
-            
-            <p class="text-xl tracking-wider font-semibold mb-[2rem] marquee-2">I'm Learning Web-Designing and Software Developing</p>
-                                            
-            <a href="#contact">
+            <h1 class="text-7xl font-bold text-[wheat] mb-[1.5rem] transition duration-300 tracking-wide marquee-1">
+                Myself <span class="text-stroke"> Amit Mathur</span>
+            </h1>
 
-               <button class="btn btn-outline-primary rounded-[9999px] get-button transform hover:scale-95 hover:shadow-lg transition-300 font-semibold text-[wheat] tracking-wider pt-1.5 pb-1.5 tracking-wide text-lg ps-10 pe-10 btn-up" >Get in Touch</button> 
+            <p class="text-xl tracking-wider font-semibold mb-[2rem] marquee-2">
+                I'm Learning Web-Designing and Software Developing
+            </p>
+
+            <a href="#contact">
+                <button class="btn btn-outline-primary rounded-[9999px] get-button transform hover:scale-95 hover:shadow-lg transition duration-300 ease-in-out font-semibold text-[wheat] tracking-wider pt-1.5 pb-1.5 text-lg ps-10 pe-10 btn-up">
+                    Get in Touch
+                </button>
             </a>
         </div>
     </section>
@@ -118,190 +129,203 @@
     <!-- About Section -->
     <section class="about" id="about">
         
-        <div class="container w-[94%] ">
+        <div class="container w-full ">
             
-            <h1 class="p-1 text-6xl font-bold text-center tracking-wide text-[wheat]">Get to <span>Know Me!</span></h1></h1>
+            <h1 class="p-1 text-5xl font-bold text-center tracking-wide text-[wheat]">Get to <span class="span">Know Me!</span></h1>
 
-            <div class="container-fluid mb-2">
+            <div class="container-fluid mt-6 mb-2">
                 <div class="row items-center ">
 
-                  <!-- Left Div-->
-                  <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 ">
+                    <!-- Left Div-->
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 ">
 
-                    <div class="mt-2 mb-2 mr-auto relative w-[100%] aspect-[1/1] max-w-[450px] justify-center">
+                        <div class="mt-2 mb-2 mr-auto relative w-[100%] aspect-[1/1] max-w-[450px] justify-center">
 
-                      <div class="w-full h-full rounded-full border-3 border-[#9333ea]">
+                            <div class="w-full h-full rounded-full border-3 border-[#9333ea]">
 
-                        <div class=" w-[70%] h-[70%] rounded-full overflow-hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 outline-[5px] outline-solid border-5 border-[#8c98f0] z-20">
-                            <img src="./IMAGE/ABOUT/gilbi.png" alt="Main Profile">
+                                <div class=" w-[70%] h-[70%] rounded-full overflow-hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 outline-[5px] outline-solid border-5 border-[#8c98f0] z-20">
+                                    <img src="./IMAGE/ABOUT/main.jpg" alt="Main Profile">
+                                </div>
+
+                                <div class="orbit-img top-right img_blur">
+                                    <img src="./IMAGE/ABOUT/post_2.png" alt="" class="w-[100%] h-[100%]">
+                                </div>
+                                
+                                <div class="orbit-img bottom-left img_blur">
+                                    <img src="./IMAGE/ABOUT/gilbi.png" alt="" class="w-[100%] h-[100%]">
+                                </div>
+
+                                <div class="orbit-img top-left img_blur ">
+                                    <img src="./IMAGE/ABOUT/post_1.png" alt="" class="w-[100%] h-[100%]">
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="orbit-img top-right img_blur">
-                          <img src="./IMAGE/ABOUT/post_2.png" alt="" class="w-[100%] h-[100%]">
-                        </div>
-                        
-                        <div class="orbit-img bottom-left img_blur">
-                          <img src="./IMAGE/ABOUT/gilbi.png" alt="" class="w-[100%] h-[100%]">
-                        </div>
-
-                        <div class="orbit-img top-left img_blur ">
-                          <img src="./IMAGE/ABOUT/post_1.png" alt="" class="w-[100%] h-[100%]">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            
-                  <!-- Right Div -->
-                  <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 ">
-
-                    <div class="bio text-center text-md-start mt-2 mb-2 rounded-lg p-3 bg-[#151316] max-w-[600px] text-lg">
-                      <p><strong class="text-xl tracking-wide"  style="font-family: 'sofia';" >An individual driven by passion and energy</strong>, eager to take on new challenges. Currently pursuing a <strong class="text-xl tracking-wide">Bachelor of Computer Applications (BCA)</strong><br> at "Star Infotech College" with a keen interest in <strong class="text-xl tracking-wide">Web Designing, Cyber Security</strong>, and <strong class="text-xl tracking-wide">IT management</strong>.</p>
-                    
-                    <div class="text-white leading-relaxed">
-                      <ul>
-                        <li class="pt-2">Name :&nbsp Amit Mathur</li>
-                        <li class="pt-2">Contact : 94614-43382</li>
-                        <li class="pt-2">G-Mail : amitmathur1914@gmail.com</li>
-                      </ul>
                     </div>
             
-                      <!-- hire btn -->
-                         <button class="btn btn-resume rounded-pill px-4 mt-5 tracking-wide transform hover:scale-95 hover:shadow-lg transition-300 font-semibold text-white"> <a href="./IMAGE/ABOUT/Amit Mathur (C.V).pdf" download></a>Download Resume</button>
+                    <!-- Right Div -->
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 border">
+
+                            <div class="bio text-center text-md-start mt-2 mb-2 rounded-lg p-3 bg-[#151316] max-w-[600px] text-lg">
+                            <p><strong class="text-xl tracking-wide"  style="font-family: 'sofia';" >An individual driven by passion and energy</strong>, eager to take on new challenges. Currently pursuing a <strong class="text-xl tracking-wide">Bachelor of Computer Applications (BCA)</strong><br> at "Star Infotech College" with a keen interest in <strong class="text-xl tracking-wide">Web Designing, Cyber Security</strong>, and <strong class="text-xl tracking-wide">IT management</strong>.</p>
+                            
+                            <div class="text-white leading-relaxed">
+                                <ul>
+                                    <li class="pt-2">Name :&nbsp Amit Mathur</li>
+                                    <li class="pt-2">Contact : 94614-43382</li>
+                                    <li class="pt-2">G-Mail : amitmathur1914@gmail.com</li>
+                                </ul>
+                            </div>
+                
+                            <!-- hire btn -->
+                            <a href="./IMAGE/ABOUT/Amit Mathur (C.V).pdf" download>
+                                <button class="btn btn-resume rounded-pill px-4 mt-5 tracking-wide transform hover:scale-95 hover:shadow-lg transition-300 font-semibold text-white"> 
+                                    Download Resume
+                                </button> 
+                            </a>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-            <!-- <div class="flex flex-col md:flex-row md:justify-between md:space-x-6 space-y-6 md:space-y-0 items-center">
-              
-                <div class="flex flex-col sm:flex-row w-full mt-16 items-center justify-between space-y-4    sm:space-y-0 sm:space-x-4" style="display: grid; grid-template-columns: 1fr 1fr;">
-                   
-                    <p class="text-left flex-1 text-[wheat] max-w-42 tracking-wider text-justify capitalize text-lg leading-[30px]" >An individual driven by passion and energy, eager to take on new challenges, Currently pursuing a Bachelor of Computer Applications (BCA) with a keen interest in software development, Cyber Security, and IT management..</p>
-                    <img src="./IMAGE/ABOUT/post_1.png" alt="" class="w-42 h-32 rounded cursor-pointer" style="justify-self: end; "/>
-                </div>
-            </div> -->
+            </div>
         </div>
     </section>
-
+    
     <!-- Education -->
-    <section class="container skills" id="education">
+    <section class="container education" id="education">
 
-        <h1 class="text-center text-6xl text-[wheat] font-bold tracking-wide">Academic <span
-        class="text-[font]">Credentials</span></h1>
+        <h1 class="text-center text-5xl text-[wheat] font-bold tracking-wide mb-4">
+            Academic <span class="span">Credentials</span>
+        </h1>
 
-        <div class="row flex slider mt-16 ml-2 me-2 pt-8 pb-8 justify-evenly">
-            
-            <div class="w-[220px] cursor-pointer flex borders col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 justify-center backdrop-blur-sm slide mt-3 pt-2 pb-2">
-                <div class="card card-2 text-light bg-[#1c1c1c] items-center mt-2 mb-2">
-                    <div class="card-body rounded-lg">
-                        <img src="./IMAGE/CONTACT/sic.png" alt="communication" class="card-img-top w-[96px] ml-9">
-                        <p class="pt-3 card-title text-lg font-bold tracking-tight text-center">Star Infotech College</p>
-                        <p class="card-title text-md tracking-wide text-center">&nbsp2024-27</p>
-                        <h5 class="text-center tracking-wide">(Pursuing BCA)</h5>
+        <div class="min-w-screen slider mt-12">
+
+            <div class="row flex justify-content-evenly items-center pt-4 pb-4">
+
+                <!-- Card 1 -->
+                <div class="w-[220px] flex col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 slide mt-4 mb-4">
+                    <div class="card card-1 bg-[#1c1c1c] text-white text-center rounded-lg">
+
+                        <div class="card-body">
+                            <img src="./IMAGE/CONTACT/sic.png" alt="College" class="card-img-top w-[96px] h-[92px] mx-auto block" />
+                            <p class="pt-3 card-title text-lg font-bold tracking-tight">Star Infotech College</p>
+                            <p class="card-text pt-1 text-md tracking-wide">2024-27</p>
+                            <h5 class="pt-1 tracking-wide">(Pursuing BCA)</h5>
+                        </div>
+
                     </div>
                 </div>
-            </div> 
-            
-            <div class="w-[220px] flex cursor-pointer  borders col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 justify-center  backdrop-blur-sm slide mt-3 pt-2 pb-2">
-                <div class="card card-2 text-light items-center bg-[#1c1c1c] mt-2 mb-2">
-                    <div class="card-body rounded-lg">
-                        <img src="./IMAGE/SKILLS/schl.png" alt="team management" class="card-img-top w-[96px] ml-8 pb-2" >
-                        <p class="card-title text-lg font-bold tracking-tight pt-2 text-center">Raceme Public School</p>
-                        <p class="card-title text-md tracking-wide text-center">2023</p>
-                        <h5 class="text-center tracking-wide">(Senior Secondary)</h5>
-                    </div>
-                </div>
-            </div> 
 
-             <div class="w-[220px] flex cursor-pointer borders col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 justify-center backdrop-blur-sm slide mt-3 pt-2 pb-2 min-w-screen skill-card-1">
-                <div class="card card-2 text-light items-center bg-[#1c1c1c] mt-2 mb-2">
-                    <div class="card-body rounded-lg ">
-                        <img src="./IMAGE/SKILLS/schl1.png" alt="Team Leadership" class="card-img-top [85px] w-[96px] ml-8">
-                        <p class="card-title text-lg pt-3 font-bold tracking-tight text-center">Mother Teresa School </p>
-                        <p class="card-title text-md tracking-wide text-center">2022</p>
-                        <h5 class="text-center tracking-wide">(Secondary)</h5>
+                <!-- Card 2 -->
+                <div class="w-[220px] flex col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 slide mt-4 mb-4">
+                    <div class="card card-1 bg-[#1c1c1c] text-white text-center rounded-lg">
+
+                        <div class="card-body">
+                            <img src="./IMAGE/SKILLS/schl.png" alt="Senior Secondary" class="card-img-top w-[96px] h-[92px] mx-auto block" />
+                            <p class="pt-3 card-title text-lg font-bold tracking-tight">Raceme Public School</p>
+                            <p class="card-text pt-1 text-md tracking-wide">2022</p>
+                            <h5 class="pt-1 tracking-wide">(Senior Secondary)</h5>
+                        </div>
+
                     </div>
                 </div>
-            </div>
-        </div>
+
+                <!-- Card 3 -->
+                <div class="w-[220px] flex col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 slide mt-4 mb-4">
+                    <div class="card card-1 bg-[#1c1c1c] text-white text-center rounded-lg">
+
+                        <div class="card-body">
+                            <img src="./IMAGE/SKILLS/schl1.png" alt="Secondary" class="card-img-top w-[96px] h-[92px] mx-auto block" />
+                            <p class="pt-3 card-title text-lg font-bold tracking-wide">Mother Teresa School</p>
+                            <p class="card-text pt-1 text-md tracking-wide">2020</p>
+                            <h5 class="pt-1 tracking-wide">(Secondary)</h5>
+                        </div>
+
+                    </div>
+                </div>
+
+             </div>
+
+         </div>
+
     </section>
-
+    
     <!-- Skills Section -->
-    <section class="container skills" id="skills">
+    <section id="skills" class="skills container">
 
-        <h1 class="text-center text-6xl text-[wheat] font-bold tracking-wide mt-1">Professional <span
-        class="text-[font]">Arsenal</span></h1>
+        <h1 class="mt-1 text-center text-5xl font-bold tracking-wide text-[wheat]">
+            Professional <span class="span">Arsenal</span>
+        </h1>
 
-        <div class=" min-w-screen slider">
+        <div class="slider w-full">
 
-            <div class="row flex mt-12 ml-2 me-2 pt-4 pb-4 justify-evenly">
-                
-                <div class="w-[220px] flex col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 justify-center slide">
-                    <div class="card card-1 bg-[#1c1c1c] text-white mt-4 mb-4">
+            <!-- Row 1 -->
+            <div class="row flex justify-evenly mt-12 ml-2 me-2 pt-4 pb-4">
 
+                <!-- HTML -->
+                <div class="slide flex w-[220px] justify-center">
+                    <div class="card card-1 mt-4 mb-4 bg-[#1c1c1c] text-white">
                         <div class="card-body rounded-lg text-center">
-                            <img src="./IMAGE/SKILLS/html.png" alt="html" class="card-img-top h-[92px] mt-3 w-[88px] ml-8"/>
-                            <p class="card-title text-2xl font-bold tracking-wider pt-5">HTML</p>
-                            <p class="font-semibold card-text tracking-wide">WEB DEVELOPING </p>
+                            <img src="./IMAGE/SKILLS/html.png" alt="html" class="card-img-top mx-auto mt-3 h-[92px] w-[88px]" />
+                            <p class="pt-5 text-2xl font-bold tracking-wider card-title">HTML</p>
+                            <p class="card-text font-semibold tracking-wide">WEB DEVELOPING</p>
                         </div>
                     </div>
-                </div> 
-                
-                <div class=" w-[220px] flex text-white col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 justify-center backdrop-blur-sm slide">
+                </div>
 
-                    <div class="card card-1 bg-[#1c1c1c] text-center text-white mt-4 mb-4">
+                <!-- CSS -->
+                <div class="slide flex w-[220px] justify-center text-white backdrop-blur-sm">
+                    <div class="card card-1 mt-4 mb-4 bg-[#1c1c1c] text-center text-white">
                         <div class="card-body rounded-lg">
-                            <img src="./IMAGE/SKILLS/css.png" alt="html" class="card-img-top h-[124px] w-[118px] ml-5 mb-4">
-                            <p class="card-title text-2xl font-bold tracking-wider mt-7">CSS</p>
-                            <p class="font-semibold card-text tracking-wide">WEB DEVELOPING </p>
+                            <img src="./IMAGE/SKILLS/css.png" alt="css" class="card-img-top mx-auto mb-4 h-[124px] w-[118px]">
+                            <p class="mt-7 text-2xl font-bold tracking-wider card-title">CSS</p>
+                            <p class="card-text font-semibold tracking-wide">WEB DEVELOPING</p>
                         </div>
                     </div>
-                </div> 
+                </div>
 
-                <div class="w-[220px] flex text-white col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 justify-center backdrop-blur-sm slide">
-
-                    <div class="card items-center card-1 text-white text-center bg-[#1c1c1c] mt-6">
+                <!-- Tailwind -->
+                <div class="slide flex w-[220px] justify-center text-white backdrop-blur-sm">
+                    <div class="card card-1 mt-6 mb-4 bg-[#1c1c1c] text-center text-white items-center">
                         <div class="card-body rounded-lg">
-                            <img src="./IMAGE/SKILLS/tailwind.png" alt="html" class="mb-12 mt-2 ml-1 card-img-top">
-                            <p class="card-title pt-3 text-2xl font-bold tracking-wide">TAILWIND</p>
-                            <p class="font-semibold card-text tracking-wide">WEB DEVELOPING </p>
+                            <img src="./IMAGE/SKILLS/tailwind.png" alt="tailwind" class="card-img-top mx-auto mt-2 mb-12">
+                            <p class="pt-3 text-2xl font-bold tracking-wide card-title">TAILWIND</p>
+                            <p class="card-text font-semibold tracking-wide">WEB DEVELOPING</p>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
-            
-            <!-- nested row of 3 col -->
-            <div class="row flex justify-evenly mt-2 ms-2 me-2 skills-grid-1 pt-2 pb-4">
 
-                <div class="w-[220px] text-white col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 justify-center flex backdrop-blur-sm slide">
+            <!-- Row 2 -->
+            <div class="row flex justify-evenly ms-2 me-2 pt-2 pb-4">
 
-                    <div class="card card-1 mt-4 mb-4 items-center text-center text-white bg-[#1c1c1c] mt-6">
+                <!-- C Language -->
+                <div class="slide flex w-[220px] justify-center text-white backdrop-blur-sm">
+                    <div class="card card-1 mt-6 mb-4 bg-[#1c1c1c] text-center text-white items-center">
                         <div class="card-body rounded-lg">
-                            <img src="./IMAGE/SKILLS/c.png" alt="html" class="card-img-top h-[96px] w-[102px] mb-8 ml-7">
-                            <p class="card-title text-[20px] font-bold pt-2">C-LANGUAGE</p>
+                            <img src="./IMAGE/SKILLS/c.png" alt="c language" class="card-img-top mx-auto mb-8 h-[96px] w-[102px]">
+                            <p class="pt-2 text-[20px] font-bold card-title">C-LANGUAGE</p>
                             <p class="card-text font-semibold tracking-wider uppercase">Software Development</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="w-[220px] text-white col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 justify-center flex backdrop-blur-sm slide">
-
-                    <div class="card card-1 mt-4 mb-4  items-center text-center text-white bg-[#1c1c1c] mt-6">
+                <!-- MS Office -->
+                <div class="slide flex w-[220px] justify-center text-white backdrop-blur-sm">
+                    <div class="card card-1 mt-6 mb-4 bg-[#1c1c1c] text-center text-white items-center">
                         <div class="card-body rounded-lg">
-
-                            <img src="./IMAGE/SKILLS/ms.png" alt="html" class="card-img-top h-[92px] w-[102px] mb-4 ml-7">
-                            <p class="card-title text-[22px] font-bold tracking-wider pt-3">M.S Office</p>
+                            <img src="./IMAGE/SKILLS/ms.png" alt="ms office" class="card-img-top mx-auto mb-4 h-[92px] w-[102px]">
+                            <p class="pt-3 text-[22px] font-bold tracking-wider card-title">M.S Office</p>
                             <p class="card-text font-semibold tracking-wide uppercase">Productivity tool</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="w-[220px] text-white col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 justify-center flex backdrop-blur-sm slide">
-
-                    <div class="card card-1 mt-4 mb-4  items-center text-center text-white bg-[#1c1c1c] mt-6">
+                <!-- Bootstrap -->
+                <div class="slide flex w-[220px] justify-center text-white backdrop-blur-sm">
+                    <div class="card card-1 mt-6 mb-4 bg-[#1c1c1c] text-center text-white items-center">
                         <div class="card-body rounded-lg">
-                            <img src="./IMAGE/SKILLS/bootstrap.png" alt="html" class="card-img-top h-[88px] w-[102px] mb-8 ml-6">
-                            <p class="card-title text-[24px] font-bold tracking-wide pt-2">BootStrap</p>
-                            <p class="card-text font-semibold tracking-wider pt-1">WEB DEVELOPING </p>
+                            <img src="./IMAGE/SKILLS/bootStrap.png" alt="bootstrap" class="card-img-top mx-auto mb-8 h-[88px] w-[102px]">
+                            <p class="pt-2 text-[24px] font-bold tracking-wide card-title">BootStrap</p>
+                            <p class="pt-1 card-text font-semibold tracking-wider">WEB DEVELOPING</p>
                         </div>
                     </div>
                 </div>
@@ -314,9 +338,9 @@
        
         <div class="container slider">
             
-            <h1 class="text-center text-6xl text-[wheat] font-bold tracking-wide mt-1 mb-3">Creative <span>Venture</span></h1>
+            <h1 class="text-center text-5xl text-[wheat] font-bold tracking-wide mt-4 mb-6">Creative <span class="span">Venture</span></h1>
            
-            <div class="row flex projects-grid justify-center text-white cursor-pointer ">
+            <div class="row flex projects-grid justify-center text-white">
                
                 <!-- amazon -->
                 <div class="col-sm-12 mt-3 col-md-4 col-lg-4 col-xl-4 col-xxl-4 w-[354px] h-[424px] card bg-[#1c1c1c] rounded-lg slide">
@@ -330,9 +354,9 @@
                         <h2 class="card-title font-bold text-xl tracking-wider uppercase text-[wheat]">Amazon U.I
                         </h2>
 
-                        <p class="card-text pt-2 pb-5 text-lg font-semibold max-w-2xl mx-auto">It is a E-Commerce Website, U.I of Amazon and made by HTML, CSS, TAILWIND CSS, BOOTSTRAP.</p>
+                        <p class="card-text pt-3 pb-4 text-lg font-semibold text-justify">It is a E-Commerce website, U.I of Amazon and made by HTML, CSS, TAILWIND CSS, BOOTSTRAP.</p>
 
-                        <a href="./amazon/index.html" target="_blank" class="card-text text-lg ">View Project →</a> 
+                        <a href="./amazon/index.html" target="_blank" class=" pb-2 tracking-wide text-lg">View Project →</a> 
                     </div>
                 </div>
                 
@@ -347,8 +371,10 @@
 
                         <h2 class="card-title  font-bold text-xl tracking-wider uppercase text-[wheat]">Netflex U.I</h2>
 
-                        <p class="card-text pt-2 pb-4 text-lg font-semibold max-w-2xl mx-auto">It is a OTT, Movies, Web-Series Platform Website, U.I of Netflex and made by HTML, CSS, TAILWIND CSS.</p>
-                        <a href="./NETFLEX/index.html" target="_blank" class="card-text text-lg">View Project →</a>
+                        <p class="card-text pt-3 pb-4 text-lg font-semibold text-justify">It is a OTT, Movies, Web-Series Platform Website, U.I of Netflex and made by HTML, CSS, TAILWIND.</p>
+                       
+                        <a href="./NETFLEX/index.html" target="_blank" class= "pb-2 tracking-wide text-lg">View Project →</a>
+
                     </div>
                 </div>
 
@@ -361,10 +387,11 @@
                             <img src="./IMAGE/PROJECT/img3.png" class="card-img-top rounded-md"> 
                         </div>
 
-                        <h2 class="card-title font-bold text-xl tracking-wider upperc.ase text-[wheat]">DASHBOARD-1 </h2>
+                        <h2 class="card-title font-bold text-xl tracking-wider uppercase text-[wheat]">DASHBOARD-1 </h2>
 
-                        <p class="card-text pt-2 pb-5 text-lg font-semibold max-w-2xl mx-auto">It's based on Event Management and Oraganization and made by HTML, CSS, TAILWIND CSS.</p>
-                        <a href="./DashBoard/DASHBOARD_1.html" class="card-text text-lg">View Project →</a>
+                        <p class="card-text pt-3 pb-4 text-lg font-semibold text-justify">It's based on Event Management and Oraganization and made by HTML, CSS, TAILWIND CSS.</p>
+                       
+                        <a href="./DashBoard/DASHBOARD_1.html" target="_blank" class="pb-2 tracking-wide text-lg">View Project →</a>
                     </div>
                 </div>
             </div>
@@ -374,43 +401,47 @@
     <!--Soft Skills Section -->
      <section class="container skills" id="soft-skills">
 
-        <h1 class="text-center text-6xl text-[wheat] font-bold tracking-wide">Core <span>Competencies</span></h1>
+        <h1 class="text-center text-5xl text-[wheat] font-bold tracking-wide">Core <span class="span" >Competencies</span></h1>
 
         <div class="row flex cursor-pointer slider mt-12 mb-5 ml-2 me-2 pt-4 pb-4 justify-evenly">
             
+            <!-- TEAM LEADERSHIP -->
             <div class="w-[220px] flex borders col-sm-12 col-md-4 col-lg-6 col-xl-3 col-xxl-3 justify-center backdrop-blur-sm slide mt-3 pt-2 pb-2 min-w-screen skill-card-1">
                 <div class="card card-2 text-light bg-[#1c1c1c] mt-2 mb-2">
                     <div class="card-body rounded-lg">
-                        <img src="./IMAGE/SKILLS/tl.png" alt="Team Leadership" class="card-img-top [85px] w-[98px] ml-8 mb-10 pt-2 pb-2">
+                        <img src="./IMAGE/SKILLS/tl.png" alt="Team Leadership" class="card-img-top h-[112px] w-[98px] ml-8 mb-10 pt-2 pb-2">
                         <p class="card-title text-center text-lg font-bold">TEAM LEADERSHIP</p>
                     </div>
                 </div>
             </div> 
             
+            <!-- TEAM MANGEMENT -->
             <div class="w-[220px] flex col-sm-12 borders col-md-4 col-lg-6 col-xl-3 col-xxl-3 justify-center  backdrop-blur-sm slide mt-3 pt-2 pb-2">
                 <div class="card card-2 text-light bg-[#1c1c1c] mt-2 mb-2">
                     <div class="card-body rounded-lg">
-                        <img src="./IMAGE/SKILLS/tm.png" alt="team management" class="card-img-top [85px] w-[98px] ml-8 mb-10 pt-2 pb-2" >
+                        <img src="./IMAGE/SKILLS/tm.png" alt="team management" class="card-img-top h-[116px] w-[98px] ml-8 mb-10 pt-1 pb-2" >
                         <p class="card-title text-center text-lg font-bold">TEAM MANGEMENT</p>
                     </div>
                 </div>
             </div> 
 
+            <!-- COMMUNICATION -->
             <div class="w-[220px] flex col-sm-12 borders col-md-4 col-lg-6 col-xl-3 col-xxl-3 justify-center backdrop-blur-sm slide mt-3 pt-2 pb-2">
                 <div class="card card-2 text-light bg-[#1c1c1c]  mt-2 mb-2">
                     <div class="card-body rounded-lg">
-                        <img src="./IMAGE/SKILLS/communication.png" alt="communication" class="mb-14 card-img-top h-[85px] w-[82px] ml-9 mt-3">
-                        <p class="card-title text-center pt-2 text-lg font-bold tracking-tight">COMMUNICATION</p>
+                        <img src="./IMAGE/SKILLS/communication.png" alt="communication" class="mb-14 card-img-top h-[90px] w-[90px] ml-9 mt-3">
+                        <p class="card-title text-center pt-1 text-lg font-bold tracking-tight">COMMUNICATION</p>
                     </div>
                 </div>
             </div> 
-            
+
+            <!-- ADOPTABILITY -->
             <div class="w-[220px] flex col-sm-12 borders col-md-12 col-lg-6 col-xl-3 col-xxl-3 justify-center backdrop-blur-sm slide mt-3 pt-2 pb-2">
 
                 <div class="card card-2 text-light bg-[#1c1c1c] mt-2 mb-2">
                     <div class="card-body rounded-lg">
-                        <img src="./IMAGE/SKILLS/adpotability.png" alt="adoptability" class="card-img-top mb-[48px] h-[96px] w-[95px] pt-1 ml-8">
-                        <p class="card-title text-lg pt-3 pb-3 text-center font-bold">ADOPTABILITY</p>
+                        <img src="./IMAGE/SKILLS/adpotability.png" alt="adoptability" class="card-img-top mb-[48px] h-[110px] w-[102px] pt-1 ml-8">
+                        <p class="card-title text-lg pt-1 pb-3 text-center font-bold">ADOPTABILITY</p>
                     </div>
                 </div>
             </div>
@@ -422,7 +453,7 @@
        
         <div class="container text-[wheat]">
             
-        <h1 class="text-center text-6xl font-bold tracking-wider">Let's <span class="text-[#9333ea]">Connect</span></h1>
+        <h1 class="text-center text-6xl font-bold tracking-wider">Let's <span class="text-[#9333ea] span">Connect</span></h1>
 
              <div class="row  ml-8 mr-8 mt-2">
 
@@ -462,18 +493,18 @@
                              <h1 class="ml-4 pt-2 text-xl text-bold text-center tracking-wide">Shastri nagar, Ajmer, Rajasthan</h1>
                         </div>
 
-                        <div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12 col-sm-12 mt-6 justify-evenly">
+                        <div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12 col-sm-12 mt-4 justify-evenly">
                             <div class="items-center flex justify-center">
                                  <img src="./IMAGE/CONTACT/contact.svg" class="w-[36px] pt-[34px] pb-3" alt="">
                             </div>
                            
-                             <h1 class="text-lg text-bold tracking-wide text-center pt-2 text-center">94614-43382</h1>
+                             <h1 class="text-lg text-bold tracking-wide text-center pt-2 text-center ml-2">94614-43382</h1>
                         </div>
                     </div>
 
-                    <p class="text-center text-lg font-semibold tracking-wide mt-5">I'm always open to new opportunities and interesting projects.</p>
+                    <h1 class="text-center text-lg font-normal tracking-wider mt-5">I'm always open to new opportunities and interesting projects.</h1>
                     
-                    <div class="social-links mb-3 flex justify-center tracking-wider text-lg mt-5">
+                    <div class="social-links mt-8 mb-3 flex justify-center tracking-wider text-lg">
                 
                         <a href="https://linkedin.com/in/thisisamitt/" target="_new" class="mx-3"><svg xmlns="http://www.w3.org/2000/svg" class="border border-[#9333ea] border-2 rounded-xl" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
                             <path fill="#0078d4" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5	V37z"></path><path d="M30,37V26.901c0-1.689-0.819-2.698-2.192-2.698c-0.815,0-1.414,0.459-1.779,1.364	c-0.017,0.064-0.041,0.325-0.031,1.114L26,37h-7V18h7v1.061C27.022,18.356,28.275,18,29.738,18c4.547,0,7.261,3.093,7.261,8.274	L37,37H30z M11,37V18h3.457C12.454,18,11,16.528,11,14.499C11,12.472,12.478,11,14.514,11c2.012,0,3.445,1.431,3.486,3.479	C18,16.523,16.521,18,14.485,18H18v19H11z" opacity=".05"></path><path d="M30.5,36.5v-9.599c0-1.973-1.031-3.198-2.692-3.198c-1.295,0-1.935,0.912-2.243,1.677	c-0.082,0.199-0.071,0.989-0.067,1.326L25.5,36.5h-6v-18h6v1.638c0.795-0.823,2.075-1.638,4.238-1.638	c4.233,0,6.761,2.906,6.761,7.774L36.5,36.5H30.5z M11.5,36.5v-18h6v18H11.5z M14.457,17.5c-1.713,0-2.957-1.262-2.957-3.001	c0-1.738,1.268-2.999,3.014-2.999c1.724,0,2.951,1.229,2.986,2.989c0,1.749-1.268,3.011-3.015,3.011H14.457z" opacity=".07"></path><path fill="#fff" d="M12,19h5v17h-5V19z M14.485,17h-0.028C12.965,17,12,15.888,12,14.499C12,13.08,12.995,12,14.514,12	c1.521,0,2.458,1.08,2.486,2.499C17,15.887,16.035,17,14.485,17z M36,36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698	c-1.501,0-2.313,1.012-2.707,1.99C24.957,25.543,25,26.511,25,27v9h-5V19h5v2.616C25.721,20.5,26.85,19,29.738,19	c3.578,0,6.261,2.25,6.261,7.274L36,36L36,36z"></path>
@@ -493,19 +524,19 @@
     </footer>
             
     <!-- Back to Top Button -->
-    <div>  
+    <section>  
         <a href="#top" 
         class="btn btn-secondary get-button ml-4 text-black pt-2 px-3 pb-2 text-lg border-2 border-[#9333ea] mb-4 ">
 
             <i class="fa-solid fa-arrow-up"></i>
         </a>
-    </div>
+    </section>
 
     <!--copyright  -->
     <section class="container">
         <div class="text-white text-center tracking-wider text-lg border mb-2 ml-[4%] w-[92%] rounded-md" style="text-shadow: 0 0 1.4px #f5e5e5;">
-            <p class="pt-2.5">copyright ©</p>
-            <h2 class="pt-2 pb-2.5">Creation by Amit Mathur</h2>
+            <p class="pt-2.5 text-white">copyright ©</p>
+            <h2 class="pt-2 pb-2.5 text-white">Creation by Amit Mathur</h2>
         </div>
     </section>
 
@@ -567,7 +598,7 @@
 
     <!-- Collapse navbar -->
     <script>
-        document.querySelectorAll('.offcanvas .nav-link a').forEach(function(link) 
+        document.querySelectorAll('.offcanvas .nav-link').forEach(function(link) 
         {
             link.addEventListener('click', function ()
             {
