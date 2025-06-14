@@ -633,6 +633,11 @@ video
   transform: scale(1.1);
 }
 
+input, textarea 
+{
+  caret-color: #9333ea;
+}
+
 
 /* .form_vl {
   border-right: 2px solid rgb(232, 238, 232);
@@ -682,4 +687,4 @@ video
     {
         grid-template-columns: 1fr;
     }
-}
+}*/
