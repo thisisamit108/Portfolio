@@ -213,7 +213,7 @@ video
 {
   color: #eee;
   color: transparent;
-  -webkit-text-stroke: 2px #9333ea;
+  -webkit-text-stroke: 3px #9333ea;
 }
 
 .get-button
@@ -250,11 +250,11 @@ video
 {
   0% 
   {
-    transform: translateX(80vw);
+    transform: translateX(-180px);
     opacity: 0;
   }
 
-  55% 
+  52% 
   {
     transform: translateX(0);
     opacity: 1;
@@ -262,12 +262,12 @@ video
 
   70% 
   {
-    transform: translateX(12px);
+    transform: translateX(-12px);
   }
 
   80% 
   {
-    transform: translateX(-6px);
+    transform: translateX(6px);
   }
 
   100% 
@@ -286,25 +286,31 @@ video
 {
   0% 
   {
-    transform: translateX(100vw);
+    transform: translateX(220px);
     opacity: 0;
   }
 
-  40% 
+  20% 
   {
-    opacity: 1;
+    opacity: 0;
   }
     
+  50% 
+  {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   100% 
   {
     transform: translateX(0);
-      pacity: 1;
+    opacity: 1;
   }
 }
 
 .marquee-2
 {
-  animation: marquee-2 2s ease-in-out forwards;
+  animation: marquee-2 3s ease-in-out forwards;
 }
 
 /* btn scroll */
@@ -334,6 +340,55 @@ video
   }
 }
 
+.draw-2 svg path
+{
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 0.2;
+  stroke-dasharray:170;
+  stroke-dashoffset:170;
+  animation: text 3s ease-in-out forwards;
+}
+
+@keyframes text 
+{
+  0% 
+  {
+    stroke-dashoffset: 100;
+  }
+
+  70%
+  {
+    fill: transparent;
+    stroke-dashoffset: 50;
+  } 
+
+  100% 
+  {
+    fill: #dfd8d8;
+    stroke-dashoffset: 0;
+    } 
+}
+
+@keyframes scale
+{
+  0%
+  {
+    scale: 1;
+  }
+
+  100%
+  {
+    scale: 1.2;
+  }
+}
+
+
+
+.draw-1 svg path
+{
+ color:#b05353; 
+}
 
 .btn-up 
 {
@@ -687,4 +742,5 @@ input, textarea
     {
         grid-template-columns: 1fr;
     }
-}*/
+}
+*/
