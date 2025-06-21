@@ -102,7 +102,7 @@ body.light-mode .text-stroke
 
 body.light-mode h1 .span
 {
-  color: wheat;
+  color:#9333ea;
 }
 
 /* navbar */
@@ -119,12 +119,18 @@ body.light-mode  .sidebar .nav-link.active
 
 body.light-mode .sidebar
 {
-   background: linear-gradient(135deg, #ffb703 , #9e2a2b,#1d3557);
+   /* background: linear-gradient(135deg, #ffb703 , #9e2a2b,#1d3557); */
+  background: linear-gradient(154deg, #c1d0f3, #abc4ff,#e2eafc);
 }
+
+body.light-mode .sidebar a li
+{
+  color: #020202;
+}
+
 
 /* .nav-link color */
 
-body.light-mode .nav-link a,
 body.light-mode .nav-link .offcanvas-header
 {
   color: #faecec;
@@ -133,8 +139,8 @@ body.light-mode .nav-link .offcanvas-header
 /* bg */
 body.light-mode
 {
-  /* background: linear-gradient(154deg, #c1d0f3, #abc4ff,#e2eafc); */
-  background: linear-gradient(135deg, #ffb703 , #9e2a2b,#1d3557);
+  background: linear-gradient(154deg, #c1d0f3, #abc4ff,#e2eafc);
+  /* background: linear-gradient(135deg, #ffb703 , #9e2a2b,#1d3557); */
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -144,14 +150,13 @@ body.light-mode
 body.light-mode .navbar,
 body.light-mode .bio 
 {
-  background-color: #efefd7;
-  color: #7678ed;
+  background-color: #f6f6e5;
+  color: #1b1ecf;
 }
 
 body.light-mode h1,
 body.light-mode h2,
-body.light-mode h3,
-body.light-mode p
+body.light-mode h3
 {
   color: #121110;
 }
@@ -160,40 +165,79 @@ body.light-mode p
 
 body.light-mode .btn-resume
 {
-  color: #7678ed !important;
+  color: #020202;
+}
+
+/* about */
+
+body.light-mode .about strong,li
+{
+  color:rgb(12, 25, 103);
+}
+
+body.light-mode .about p 
+{
+  color: #5653b1;
+}
+
+body.light-mode .about a
+{
+  color: #9333ea;
+}
+
+/* project */
+body.light-mode .project p
+{
+  color: #020202;
 }
 
 /* cards light  */
 
 body.light-mode .card
 {
-background: #fefae0;
+  background-image: linear-gradient(135deg,#bbf3ff,#94c2fe, #77a9ff,#cdc6ff, #9cadff);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-/* li text color */
-body.light-mode li 
+body.light-mode .card p,a,h5
 {
-  color: #7678ed;
+  color: black;
 }
 
-/* p tag */
-
-body.light-mode p 
+/* contact */
+body.light-mode .social-links a 
 {
-  color: #7a7afa;
+  border-radius: 20%;
+  border: #0a0a0a 2px solid;
 }
 
-/* strong */
-body.light-mode strong
+body.light-mode .social-links svg
 {
-  color: #415a77;
+  fill: #0a0a0a;
 }
 
-body.light-mode button 
+body.light-mode .contact label
 {
- color:#090807;
+  color: #020202;
 }
 
+/* copyright */
+body.light-mode .copyright div
+{
+  border: 1px solid #0a0a0a;
+}
+
+body.light-mode .copyright p,h2
+{
+  color: #020202;
+}
+
+
+body.light-mode .draw-2 svg path
+{
+  fill: transparent;
+  stroke: #0a0a0a;
+}
 /*Home*/
 
 /* 
@@ -209,17 +253,22 @@ video
   filter: blur(1.5px);
 } */
 
-.text-stroke 
+/* .text-stroke 
 {
   color: #eee;
   color: transparent;
   -webkit-text-stroke: 3px #9333ea;
-}
+} */
 
 .get-button
 {
   background: linear-gradient(to right, #9333ea, #ec4899);
   cursor: pointer;
+}
+
+.copyright p,h2
+{
+  color: white;
 }
 
 .intro 
@@ -344,7 +393,7 @@ video
 .draw-2 svg path
 {
   fill: transparent;
-  stroke: #fff;
+  stroke:white;
   stroke-width: 0.2;
   stroke-dasharray:170;
   stroke-dashoffset:170;
@@ -485,6 +534,8 @@ video
 {
   color: #9333ea;
 }
+
+
 
 /* Skills Section */
 
