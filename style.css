@@ -107,6 +107,47 @@ body.light-mode h1 .span
 
 /* navbar */
 
+/* intro */
+
+body.light-mode .draw-2 svg path 
+{
+  fill: transparent;
+  stroke: #0a0a0a;
+  stroke-width: 0.3;
+  stroke-dasharray: 170;
+  stroke-dashoffset: 170;
+  animation: text-light 3s ease-in-out forwards;
+}
+
+@keyframes text-light 
+{
+  0% {
+    stroke-dashoffset: 170;
+    fill: transparent;
+
+  }
+  20% 
+  {
+    stroke-dashoffset: 140;
+    fill: transparent;
+  }
+  40% 
+  {
+    stroke-dashoffset: 110;
+    fill: transparent;
+  }
+  70% 
+  {
+    fill: transparent;
+    stroke-dashoffset: 50;
+  }
+  100% 
+  {
+    fill: #0a0a0a;
+    stroke-dashoffset: 0;
+  }
+} 
+
 /* slide hover on menus */
 
 body.light-mode  .sidebar .nav-link:hover,
@@ -442,7 +483,7 @@ video
   stroke-width: 0.2;
   stroke-dasharray:170;
   stroke-dashoffset:170;
-  animation: text 3s ease-in-out forwards;
+  animation: text 4s ease-in-out forwards;
 }
 
 @keyframes text 
@@ -450,6 +491,12 @@ video
   0% 
   {
     stroke-dashoffset: 170;
+  }
+
+  20% 
+  {
+    stroke-dashoffset: 140;
+    fill: transparent;
   }
 
   40%
