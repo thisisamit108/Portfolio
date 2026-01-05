@@ -586,22 +586,22 @@
                 <form action="https://formspree.io/f/mvgrpvpk" method="POST" onsubmit="alert('Message Sent!');" class="form_vl pl-6 pr-6 col-xl-6 col-xxl-6 col-lg-6 col-md-6 col-sm-12">
                 
                     <div class="mt-4 mb-2">
-                        <label for="name" class="form-label tracking-wide text-lg font-bold ml-1">Name</label>
+                        <label for="name" class="form-label tracking-wide text-lg font-bold ml-1">Name<sup class="required">*</sup></label>
                         <input type="text" class="form-control rounded-xl border-[#9333ea] border-2" id="name" name="name" placeholder="Your name" required>
                     </div>
 
                     <div class="mt-4">
-                        <label for="email" class="form-label tracking-wide text-lg font-bold ml-1">Gmail address</label>
+                        <label for="email" class="form-label tracking-wide text-lg font-bold ml-1">Gmail address<sup class="required">*</sup></label>
                         <input type="email" class="form-control rounded-xl border-[#9333ea] border-2" id="email" name="_replyto" placeholder="name@gmail.com" required>
                     </div>
 
                     <div class="mt-4">
-                        <label for="message" class="form-label tracking-wide text-lg font-bold ml-1">Message</label>
+                        <label for="message" class="form-label tracking-wide text-lg font-bold ml-1">Message<sup class="required">*</sup></label>
                         <textarea class="form-control rounded-xl border-[#9333ea] border-2" id="message" name="message" rows="4" placeholder="Your message..." required></textarea>
                     </div>
 
                     <div class="justify-center flex items-center">
-                        <button type="submit" class="text-white btn btn-outline-primary rounded-[9999px] get-button transform hover:scale-95 mt-5 pl-12 pr-12 pt-2 pb-2 tracking-wider text-[16px]">Send Message</button>
+                        <button onclick="return confirm('Are you sure you want to send this message?')" type="submit" class="text-white btn btn-outline-primary rounded-[9999px] get-button transform hover:scale-95 mt-5 pl-12 pr-12 pt-2 pb-2 tracking-wider text-[16px]">Send Message</button>
                     </div>
                 </form>
 
@@ -645,7 +645,7 @@
                         
                         <!-- instagram link -->
                         <a href="https://instagram.com/_thisisamitt/" class="ml-5" target="_blank" >
-                            <svg xmlns="http://www.w3.org/2000/svg" class="border rounded-xl border-[#9333ea] border-2" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="border rounded-xl border-[#9333ea] border-2" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
                             <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
                             </svg>
                         </a>
@@ -662,20 +662,91 @@
 
     <!-- Chat-bot msg -->
     <div id="chatWidget" class="chat-wrapper">
-        <div class="chat-header">
-            Portfolio Assistant
-            <span id="chatClose" class="chat-close">✕</span>
-        </div>
+            <div class="chat-header">
+                Portfolio Assistant
+                <span id="chatClose" class="chat-close">✕</span>
+            </div>
 
-        <div id="chatBody" class="chat-body"></div>
+            <div id="chatBody" class="chat-body"></div>
 
-        <input id="userInput" type="text" placeholder="Type your message & press Enter…" class="chat-input"/>
+            <input id="userInput" type="text" placeholder="Type your message & press Enter…" class="chat-input"/>
     </div>
+
+    <!-- chat bot -->
+    <script>
+            const chatWidget = document.getElementById("chatWidget");
+            const chatToggle = document.getElementById("chatToggle");
+            const chatClose = document.getElementById("chatClose");
+            const chatBody = document.getElementById("chatBody");
+            const userInput = document.getElementById("userInput");
+
+            // Open
+            chatToggle.addEventListener("click", () => {
+            chatWidget.style.display = "flex";
+            userInput.focus();
+            });
+
+            // Close
+            chatClose.addEventListener("click", () => {
+            chatWidget.style.display = "none";
+            });
+
+            // Add messages
+            function addMessage(text, sender){
+            const msg = document.createElement("div");
+            msg.className = `message ${sender}`;
+            msg.innerText = text;
+            chatBody.appendChild(msg);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            // Bot logic
+            function botReply(input){
+            input = input.toLowerCase();
+
+            if(input.includes("hello") || input.includes("hi"))
+                return "Welcome! I'm your Portfolio Assistant. How may I support your review today?";
+
+            if(input.includes("name") || input.includes("owner"))
+                return "The website and assistant are developed and maintained by Amit Mathur, the owner and author of this portfolio";
+
+            if(input.includes("education"))             
+            return "Amit Mathur is Currently pursuing a bachelor of Computer Applications (BCA), focusing on programing, web technologies, and computer science fundamentals";
+
+            if(input.includes("skills"))
+                return "My core skills include HTML, CSS, JavaScript, Tailwind CSS, daisy UI, CPP language, etc and responsive UI development and Backend Skills.";
+
+            if(input.includes("projects"))
+                return "Netflex UI, Amazon UI, Dashboard and Flower E-commerce website also you can explore my featured projects in the projects section.";;
+
+            if(input.includes("contact"))
+                return "My contact Number is 9461-443382 and you can drop your query on this email ID amitmathur1914@gmail.com";;
+
+            if(input.includes("ux"))
+                return "This chatbot delivers guided discovery and improves engagement.";
+
+            if(input.includes("ai") || input.includes("future"))
+                return "Phase 2 roadmap includes AI-powered conversational intelligence.";
+
+            return "Noted. I’ll address this during the presentation.";
+            }
+
+
+            // Send on Enter
+            userInput.addEventListener("keypress", e =>{
+            if(e.key === "Enter" && userInput.value.trim() !== ""){
+                const text = userInput.value;
+                addMessage(text, "user");
+                addMessage(botReply(text), "bot");
+                userInput.value = "";
+            }
+            });
+    </script>
 
     <!-- Back to Top Button -->
     <section>  
         <a href="#top" 
-        class="btn btn-secondary get-button ml-4 text-black pt-2 px-3 pb-2 text-lg border-2 border-[#9333ea] mb-4">
+        class="btn btn-secondary get-button ml-4 text-black pt-2 px-3 pb-2 text-lg border-2 border-[#9333ea] mb-4 ">
 
             <i class="fa-solid fa-arrow-up"></i>
         </a>
@@ -688,77 +759,6 @@
             <h2 class="pt-2 pb-2">Creation by Amit Mathur</h2>
         </div>
     </section>
-
-    <!-- chat bot -->
-    <script>
-    const chatWidget = document.getElementById("chatWidget");
-    const chatToggle = document.getElementById("chatToggle");
-    const chatClose = document.getElementById("chatClose");
-    const chatBody = document.getElementById("chatBody");
-    const userInput = document.getElementById("userInput");
-
-    // Open
-    chatToggle.addEventListener("click", () => {
-    chatWidget.style.display = "flex";
-    userInput.focus();
-    });
-
-    // Close
-    chatClose.addEventListener("click", () => {
-    chatWidget.style.display = "none";
-    });
-
-    // Add messages
-    function addMessage(text, sender){
-    const msg = document.createElement("div");
-    msg.className = `message ${sender}`;
-    msg.innerText = text;
-    chatBody.appendChild(msg);
-    chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    // Bot logic
-    function botReply(input){
-    input = input.toLowerCase();
-
-    if(input.includes("hello") || input.includes("hi"))
-        return "Welcome! I'm your Portfolio Assistant. How may I support your review today?";
-
-    if(input.includes("name") || input.includes("owner"))
-        return "The website and assistant are developed and maintained by Amit Mathur, the owner and author of this portfolio";
-
-    if(input.includes("education"))             
-    return "Amit Mathur is Currently pursuing a bachelor of Computer Applications (BCA), focusing on programing, web technologies, and computer science fundamentals";
-
-    if(input.includes("skills"))
-        return "My core skills include HTML, CSS, JavaScript, Tailwind CSS, daisy UI, CPP language, etc and responsive UI development and Backend Skills.";
-
-    if(input.includes("projects"))
-        return "Netflex UI, Amazon UI, Dashboard and Flower E-commerce website also you can explore my featured projects in the projects section.";;
-
-    if(input.includes("contact"))
-        return "My contact Number is 9461-443382 and you can drop your query on this email ID amitmathur1914@gmail.com";;
-
-    if(input.includes("ux"))
-        return "This chatbot delivers guided discovery and improves engagement.";
-
-    if(input.includes("ai") || input.includes("future"))
-        return "Phase 2 roadmap includes AI-powered conversational intelligence.";
-
-    return "Noted. I’ll address this during the presentation.";
-    }
-
-
-    // Send on Enter
-    userInput.addEventListener("keypress", e =>{
-    if(e.key === "Enter" && userInput.value.trim() !== ""){
-        const text = userInput.value;
-        addMessage(text, "user");
-        addMessage(botReply(text), "bot");
-        userInput.value = "";
-    }
-    });
-    </script>
 
     <!-- dark mode light mode -->
     <script>
@@ -834,5 +834,4 @@
     </script>
 </body>
 </html> 
-
 
